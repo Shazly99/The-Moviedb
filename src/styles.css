@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,400;0,600;1,100;1,400&display=swap');
+
+body{
+    background-color: #131722;
+    color: #fff;
+    font-family: 'Montserrat Alternates';
+}
+a{
+    text-decoration: none;
+    color: #fff !important;
+    cursor: pointer;
+}
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-track{
+    background-color:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #AAAAAA;
+    border-radius: 50px;
+    transition: all 1s;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #aaaaaa8d;
+    transition: all 1s;
+}
+.e7070742{
+    padding: 8px 0;
+    border-width: 10px 0 0;
+    border-top-style: solid;
+    -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+    border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+}
+p{
+    max-width: 800px;
+}
+.py{
+    margin-top: 100px !important;
+}

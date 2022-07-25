@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <!-- Trinding Movies -->
+    <nav class="  d-flex justify-content-md-center align-items-center" aria-label="Page  navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link"  (click)="getAllTvShow(num-1)"  aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li  class="page-item "><a (click)="getAllTvShow(1)" class="page-link " >1</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(2)" >2</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(3)" >3</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(4)" >4</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(5)" >5</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(6)" >6</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(7)" >7</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(8)" >8</a></li>
+          <li class="page-item"><a class="page-link" (click)="getAllTvShow(9)" >9</a></li>
+          <li class="page-item">
+            <a class="page-link"  (click)="getAllTvShow(num+1)" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <div class="row">
+        <div *ngFor="let item of tvShows" class="col-md-3">
+            <a [routerLink]="['/tv-details',item.id]">
+                <div class="movies position-relative">
+                    <img class="w-100 mt-3" [src]="imgPaht+item.poster_path" alt="" srcset="">
+                    <h1 class="h6 mt-2 text-center">{{(item.name+item.title).replace('undefined', '')}}</h1>
+                    <div class="vote position-absolute bg-info">
+                        {{(item.vote_average).toFixed(1)}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.vote{
+    background-color: #e6b91e;
+    color: white;
+    font-weight: 900;
+    padding: 15px 10px;
+    top: 15px ;
+    right: 15px;
+}
+.brd{
+    background-color: #a8a8a83d;
+    height: 1px;
+
+}
+
+.mt-5{
+    margin-top: 150px !important;
+}
+.page-link{
+    color: black !important;
+    font-weight: bolder !important;
+}

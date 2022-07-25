@@ -1,0 +1,23 @@
+<div class="py row container m-auto bg-">
+    <div class="col-md-3">
+        <img class="w-100 mt-3" [src]="imgPaht+MoviesDetails.poster_path" alt="" srcset="">
+    </div>
+    <div class="mt-2 offset-1 col-md-8">
+        <h2 class="text-white fw-bolder">{{MoviesDetails.title}}</h2>
+        <h4 class="text-muted mt-2 ">{{MoviesDetails.tagline}}</h4>
+        <p *ngFor="let item of this.MoviesDetails.genres" class="d-inline mx-2 ">
+            <a class="btn btn-info text-black mt-3">{{item.name}}</a>
+        </p>
+        <div class="mt-4">
+            <label class="fs-4">Vote : </label><span class="text-muted font-monospace fs-5">{{" "+MoviesDetails.vote_average}}</span>
+        </div>
+        <div class="mt-4">
+            <label class="fs-4">Vote Count : </label><span class="text-muted font-monospace fs-5">{{" "+MoviesDetails.vote_count}}</span>
+        </div>
+        <div class="mt-4">
+            <label class="fs-4">Release Date : </label><span class="text-muted font-monospace fs-5">{{" "+MoviesDetails.release_date}}</span>
+        </div>
+        <p class="text-muted mt-4 ">{{MoviesDetails.overview}}</p>
+    </div>
+</div>
+

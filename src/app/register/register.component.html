@@ -1,0 +1,132 @@
+<div class="py py-5  container w-75 bg-dark rounded-3">
+    <h1 class="text-center py-3 text-info"> Register</h1>
+    <div *ngIf="error" class=" m-auto w-75 alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error! </strong>{{error}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <form class="m-auto w-75" [formGroup]="registerForm" (ngSubmit)="submit(registerForm)">
+        <!-- Frist name -->
+        <div class="form-group">
+            <label for="FName">First Name : </label>
+            <input formControlName="first_name" type="text" id="FName" class="form-control" placeholder="enter first name" aria-describedby="helpId">
+            <div class="mt-2" *ngIf="registerForm.get('first_name')?.errors!=null&&registerForm.get('first_name')?.touched">
+                <div *ngIf="registerForm.get('first_name')?.errors?.['required']" class=" alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>First Name!</strong> is required
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('first_name')?.errors?.['minlength']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>First Name!</strong> Min lenght 3
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('first_name')?.errors?.['maxlength']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>First Name!</strong> Max lenght 10
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- last name -->
+        <div class="form-group">
+            <label for="LName">Last Name : </label>
+            <input formControlName="last_name" type="text" id="LName" class="form-control"
+                placeholder="enter last name" aria-describedby="helpId">
+            <div class="mt-2"
+                *ngIf="registerForm.get('last_name')?.errors!=null&& registerForm.get('last_name')?.touched">
+                <div *ngIf="registerForm.get('last_name')?.errors?.['required']"
+                    class=" alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>last Name!</strong> is required
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('last_name')?.errors?.['minlength']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>last Name!</strong> Min lenght 3
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('last_name')?.errors?.['maxlength']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>last Name!</strong> Max lenght 10
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Age -->
+        <div class="form-group">
+            <label for="age">Age : </label>
+            <input formControlName="age" type="number" id="age" class="form-control"
+                placeholder="enter your age" aria-describedby="helpId">
+            <div class="mt-2"
+                *ngIf="registerForm.get('age')?.errors!=null&& registerForm.get('age')?.touched">
+                <div *ngIf="registerForm.get('age')?.errors?.['required']"
+                    class=" alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Age!</strong> is required
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('age')?.errors?.['min']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Age!</strong> Age lase than 15 years
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('age')?.errors?.['max']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Age!</strong> Age lage than 60 years
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+            <label for="Email">Email : </label>
+            <input formControlName="email" type="email" id="Email" class="form-control"
+                placeholder="enter your email" aria-describedby="helpId">
+            <div class="mt-2"
+                *ngIf="registerForm.get('email')?.errors!=null&& registerForm.get('email')?.touched">
+                <div *ngIf="registerForm.get('email')?.errors?.['required']"
+                    class=" alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Email!</strong> is required
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('email')?.errors?.['email']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Email!</strong> email not valid
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+ 
+            </div>
+
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+            <label for="password">password : </label>
+            <input formControlName="password" type="password" id="password" class="form-control"
+                placeholder="enter your password " aria-describedby="helpId">
+            <div class="mt-2"
+                *ngIf="registerForm.get('password')?.errors!=null&& registerForm.get('password')?.touched">
+                <div *ngIf="registerForm.get('password')?.errors?.['required']"
+                    class=" alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>password!</strong> is required
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div *ngIf="registerForm.get('password')?.errors?.['pattern']"
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>password!</strong> password not valid
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+ 
+            </div>
+
+        </div>
+        
+
+
+
+        <button  [disabled]="registerForm.invalid" class="btn mt-3 btn-primary"  >Register</button>
+
+    </form>
+</div>
