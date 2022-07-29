@@ -10,7 +10,7 @@ export class AppComponent {
   constructor(public _AuhtService:AuhtService){
     _AuhtService.userData.subscribe(()=>{
       if (_AuhtService.userData.getValue()!=null) {
-        setInterval(()=>_AuhtService.LogOut(),5000)
+        setInterval(()=>_AuhtService.LogOut(),50000)
       }
     })
 
