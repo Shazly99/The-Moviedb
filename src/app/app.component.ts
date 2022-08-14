@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor(public _AuhtService:AuhtService){
-    _AuhtService.userData.subscribe(()=>{
-      if (_AuhtService.userData.getValue()!=null) {
-        setInterval(()=>_AuhtService.LogOut(),50000)
-      }
+//     _AuhtService.userData.subscribe(()=>{
+//       if (_AuhtService.userData.getValue()!=null) {
+//         setInterval(()=>_AuhtService.LogOut(),50000)
+//       }
     })
 
 
